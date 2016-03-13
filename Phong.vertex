@@ -1,0 +1,11 @@
+
+varying vec3 vn;
+varying vec3 vl;
+void main( void ) {
+    vec3 vp = ( gl_ModelViewMatrix * gl_Vertex ).xyz;
+    vec3 lp = gl_LightSource[0].position.xyz;
+    vl = lp – vp;
+    vn = gl_NormalMatrix * gl_Normal;
+    gl_Position = ftransform();
+     
+}

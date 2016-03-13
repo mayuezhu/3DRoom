@@ -1,0 +1,8 @@
+varying vec3 vn;
+varying vec3 vl;
+void main( void ) {
+    float diffuse = dot( normalize(vl), normalize(vn) );
+    diffuse = max( diffuse, 0.0 );
+
+    vec4 intensity = diffuse * gl_FrontLightProduct[0].diffuse;
+    gl_FragColor = intensity; }
